@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>To-Do List</title>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div class="content-container">
+
+            <div class="control-panel">
+                <div class="member-info">
+                    <div class="user-info-container">
+                        <div class="user-photo"></div>
+                        <div class="user-info">
+                            <p class="user-name">Nazım Efe Yiğit</p>
+                            <p class="user-mail">efe.yigit@ug.bilkent.edu.tr</p>
+                        </div>
+                    </div>
+                    <!-- SELECTED CLASSI BUNDA DEFAULT OLARAK VAR YENİ LİSTE OLUŞTUĞUNDA REMOVECLASSLA KALDIRILACAK-->
+                    <div class="project-members-control selected">
+                        <i style="color: #7E848D;" class="fa-regular fa-star"></i>
+                        <p class="project-members-control-text">Project Members</p>
+                    </div>
+                </div>
+                <!-- BİR TANE ÖRNEK BIRAKTIM NEW LIST EKLENDİKÇE AYNI CLASS İSİMLERİYLE HTML GELECEK BURAYA
+                O ESNADA SEÇİLİ OLAN CLASSA "SELECTED" CLASSI EKLENECEK (LIST-CONTAINER-ITEM-BORDER CLASSLI ELEMENTE) ADDCLASS KULLANARAK -->
+                <div class="list-container">
+                    
+                </div>
+                <div class="add-list">
+                    <i style="color: #4A4144;" class="fa-solid fa-plus"></i>
+                    <p>New List</p>
+                </div>
+            </div>
+
+            <div class="content-panel">
+                
+                <!-- YENİ LİSTE EKLENİNEC BURAYI KENDİ BİLGİLERİYLE DOLDURACAK
+                DEFAULT DISPLAY NONE BU ADD NEW LIST DENİP EKLENİNCE OTOMATİK DISPLAY FLEX OLACAK BLOCK OLURSA BOZULUR DİKKAT ET
+                BAŞKA LİSTEYE GEÇERKEN BU DISPLAY NONE OLUP O DISPLAY FLEX OLACAK
+                FARKLI LİSTELERİN İSİMLERİNİ AYIRT ETMEK İÇİN CONTENT-LIST-PAGE YANINA ADDCLASSLA INPUT ALINAN İSMİ GİREBİLİRSİN-->
+                    
+                <!-- SİTE İLK AÇILDIĞINDA PROJECT MEMBERS GELECEK SONRA LİSTE EKLEDİKÇE BU DISPLAY NONE DİĞERİ DISPLAY -->
+                <!-- PROJECT MEMBERS -->
+                <div class="project-members-content">
+                    <div class="project-members-content-heading">
+                        <i style="color: #9C3350;" class="fa-regular fa-star"></i>
+                        <p class="project-members-content-text">Project Members</p>
+                    </div>
+                    <div class="project-members-content-user">
+                        <div class="project-members-content-user-profile ecem"></div>
+                        <div class="project-members-content-user-info">
+                            <p class="project-members-content-user-name">Ecem Tekiner</p>
+                            <p class="project-members-content-user-section">Section: 03</p>
+                            <p class="project-members-content-user-id">22001652</p>
+                        </div>
+                    </div>
+                    <div class="project-members-content-user">
+                        <div class="project-members-content-user-profile melisa"></div>
+                        <div class="project-members-content-user-info">
+                            <p class="project-members-content-user-name">Melisa Mazman</p>
+                            <p class="project-members-content-user-section">Section: 03</p>
+                            <p class="project-members-content-user-id">22001662</p>
+                        </div>
+                    </div>
+                    <div class="project-members-content-user">
+                        <div class="project-members-content-user-profile efe"></div>
+                        <div class="project-members-content-user-info">
+                            <p class="project-members-content-user-name">Nazım Efe Yiğit</p>
+                            <p class="project-members-content-user-section">Section: 03</p>
+                            <p class="project-members-content-user-id">22203174</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--ARTIYA BASINCA ÇIKAN YER MAIN-CONTAINER İÇİNDE OLMAK ZORUNDA YOKSA TÜM SAYFAYI KAPLIYOR -->
+            <div class="add-list-window">
+                <div class="add-list-container">
+                    <div class="add-list-heading">
+                        New Task Name
+                    </div>
+                    <p class="error">This To-Do is exist!</p>
+                    <div class="add-list-input-container">
+                        <input class="add-list-input" type="text">
+                    </div>
+                    <div class="add-list-buttons">
+                        <button class="create">Create</button>
+                        <button class="cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+   
+</body>
+</html>

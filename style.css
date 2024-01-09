@@ -1,0 +1,368 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+}
+
+.content-container {
+    width: 1250px;
+    height: 770px;
+    display: flex;
+    position: relative;
+}
+
+/* SOL TARAF */
+
+.control-panel {
+    height: 100%;
+    background-color: #F8F8F8;
+    width: calc(((100%) / 7) * 2);
+    display: flex;
+    flex-direction: column;
+}
+
+.member-info {
+    width: 100%;
+    padding: 15px 15px 15px 6px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.member-info::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%; /* Center the border horizontally */
+    transform: translateX(-50%); /* Move it back by half of its width */
+    width: 96%; /* Adjust the width to your desired value */
+    height: 2px;
+    background-color: #CCCCCC;
+}
+
+.user-info-container {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.user-photo {
+    width: 75px;
+    height: 75px;
+    background-image: url(./images/efe.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: black;
+}
+
+.user-name {
+    color: black;
+    font-weight: bold;
+}
+
+.user-mail {
+    color: #A6A6A9;
+}
+
+.project-members-control {
+    display: flex;
+    gap: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    padding-left: 15px;
+    align-items: center;
+}
+
+.selected {
+    border-left: 4px solid #04027B;
+}
+
+.error {
+    display: none;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+    gap: 6px;
+}
+
+.list-container-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 12px 12px 12px 0px;
+}
+
+.list-container-item:hover {
+    background-color: #F0F0F0;
+    cursor: pointer;
+}
+
+.list-container-item:hover .fa-trash{
+    display: block;
+}
+
+.fa-trash {
+    display: none;
+}
+
+.list-container-item-border {
+    width: 4px;
+    height: 100%;
+}
+
+.list-container-item-name {
+    font-size: 18px;
+}
+
+.list-container-item-count {
+    background-color: #DDDDDD;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%; 
+    font-size: 14px;
+    padding-top: 2px;
+    margin-left: auto;
+}
+
+.add-list {
+    background-color: #F8F8F8;
+    padding: 15px;
+    border-top: 1px solid #CCCCCC;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #4A4144;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* SAĞ TARAF */
+
+.content-panel {
+    width: calc(((100%) / 7) * 5);
+    height: 100%;
+}
+
+.project-members-content {
+    width: 100%;
+    height: 100%;
+    background-color: #FFE5E8;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-members-content-heading {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 750;
+    margin: 48px;
+    gap: 32px;
+    color: #AC3759;
+    margin-bottom: 120px;
+}
+
+.project-members-content-user {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    gap: 30px;
+    margin-bottom: 36px;
+}
+
+.project-members-content-user-profile {
+    border: 1px solid #D6CACC;
+}
+
+.ecem {
+    width: 75px;
+    height: 75px;
+    background-image: url(./images/ecem.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.melisa {
+    width: 75px;
+    height: 75px;
+    background-image: url(./images/melisa.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.efe {
+    width: 75px;
+    height: 75px;
+    background-image: url(./images/efe.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.project-members-content-user-info {
+    line-height: 30px;
+}
+
+.project-members-content-user-name {
+    font-weight: 700;
+}   
+
+/* EKLENEN LİSTENİN CONTENT PANELİ */
+
+.content-list-page {
+    width: 100%;
+    height: 100%;
+    background-color: #697CCD;
+    display: flex; /* JS İLE YENİ LİSTE EKLENİNCE BU DISPLAY FLEX OLARAK SEKME DEĞİŞTİRİRKEN DE AYNI MANTIK */
+    flex-direction: column;
+}
+
+.content-list-page-heading {
+    color: #FCF6FB;
+    font-size: 36px;
+    padding-top: 68px;
+    padding-left: 48px;
+    margin-bottom: 96px;
+}
+
+.content-list-page-task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.content-list-page-task {
+    display: flex;
+    background-color: #FFFFFF;
+    width: 90%;
+    margin: auto;
+    padding: 24px;
+    border-radius: 12px;
+    gap: 14px;
+    align-items: center;
+}
+
+.content-list-page-task-checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.content-list-page-task-name {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.content-list-page-add-task {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    background-color: #798CDF;
+    padding: 48px;
+    position: relative;
+}
+
+.content-list-page-add-task-input {
+    width: 100%;
+    padding: 18px;
+    background-color: #D6DBF6;
+    font-size: 24px;
+    border: none;
+    border-radius: 8px;
+    padding-left: 58px;
+}
+
+/* ADD BASINCA ÇIKAN ŞEY */
+
+.add-list-window {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.4);
+    display: none; /* display flex olacak basıldığında*/
+    align-items: center;
+    justify-content: center;
+}
+
+.add-list-container {
+    width: 400px;
+    height: 220px;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    -webkit-box-shadow: 10px 12px 13px -4px rgba(0,0,0,0.4);
+    -moz-box-shadow: 10px 12px 13px -4px rgba(0,0,0,0.4);
+    box-shadow: 10px 12px 13px -4px rgba(0,0,0,0.4);
+}
+
+.add-list-heading {
+    width: 100%;
+    background-color: #DEDDDE;
+    color: black;
+    font-size: 24px;
+    text-align: center;
+    padding: 18px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.add-list-input {
+    width: 300px;
+    height: 36px;
+    font-size: 24px;
+    padding-left: 4px;
+}
+
+.add-list-buttons {
+    align-self: flex-end;
+    margin-right: 24px;
+    margin-bottom: 8px;
+}
+
+.create, .cancel{
+    padding: 6px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: 1px solid gray;
+
+}
+
+.create {
+    margin-right: 10px;
+}
